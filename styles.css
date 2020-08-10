@@ -7,7 +7,7 @@
 }
 .container {
   font-family: "Alice", serif;
-  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
   padding: 20px;
   margin-top: 16px;
   color: #3f3f44;
@@ -28,12 +28,23 @@
 }
 .card-body {
   color: #3f3f44;
-  padding: 45px 20px;
-  font-size: 18px;
+  padding: 32px;
+  font-size: 20px;
 }
+.weather-forecast-temperature {
+  font-size: 18px;
+  padding: 0;
+  padding-top: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 h1 {
   font-size: 30px;
   margin-bottom: 0;
+}
+h3 {
+  font-size: 18px;
 }
 li {
   font-size: 18px;
@@ -54,39 +65,20 @@ ul {
 }
 .fas.main-icon {
   font-size: 120px;
+  margin-right: 5px;
 }
 
 small {
   font-size: 20px;
   vertical-align: super;
 }
-.col-2 {
-  padding: 0;
-  margin: 0 auto;
-  text-align: center;
-}
 
 .fas {
   color: #fee140;
 }
 
-.fa-sun {
-  font-size: 30px;
-  text-align: center;
-}
-
-.fa-cloud-sun {
-  font-size: 30px;
-  text-align: center;
-}
-
-.fa-cloud-sun-rain {
-  font-size: 30px;
-  text-align: center;
-}
-
 .btn {
-  background-color: #fc9483;
+  background-color: #ff9a9e;
   color: #3f3f44;
   cursor: pointer;
   height: calc(1.5em + 0.75rem + 2px);
@@ -96,6 +88,29 @@ small {
   margin: 0 8px;
 }
 .btn:hover {
-  background-color: #fc868b;
+  background-color: #ffafbd;
   color: #3f3f44;
+}
+
+a {
+  color: #3f3f44;
+  cursor: default;
+}
+a:hover {
+  color: #ec8c69;
+  text-decoration: none;
+}
+
+.coded {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+}
+
+#humidity,
+#wind {
+  font-weight: bold;
+}
+#description::first-letter {
+  text-transform: capitalize;
 }

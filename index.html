@@ -42,7 +42,6 @@
           <li class="date">
             Monday 21 Jun 2020 13:00
           </li>
-          <li>Sunny 😎</li>
         </ul>
 
         <br />
@@ -50,9 +49,9 @@
         <div class="row">
           <div class="col-6">
             <ul>
-              <li>Precipitation: <strong>2%</strong></li>
-              <li>Humidity: <strong>70%</strong></li>
-              <li>Wind: <strong>4km/hr</strong></li>
+              <li id="description">Sunny 😎</li>
+              <li>Humidity: <span id="humidity"></span></li>
+              <li>Wind: <span id="wind"></span></li>
             </ul>
           </div>
 
@@ -77,34 +76,16 @@
 
       <div class="card">
         <div class="card-body">
-          <div class="row card-text">
-            <div class="col-2">
-              Monday
-            </div>
-            <div class="col-2">
-              Tuesday
-            </div>
-            <div class="col-2">
-              Wednesday
-            </div>
-            <div class="col-2">
-              Thursday
-            </div>
-            <div class="col-2">
-              Friday
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-2">29˚ <i class="fas fa-sun"></i></div>
-            <div class="col-2">30˚ <i class="fas fa-sun"></i></div>
-            <div class="col-2">28˚ <i class="fas fa-cloud-sun"></i></div>
-            <div class="col-2">22˚ <i class="fas fa-cloud-sun-rain"></i></div>
-            <div class="col-2">25˚<i class="fas fa-cloud-sun"></i></div>
-          </div>
+          <div class="row card-text" id="forecast"></div>
         </div>
       </div>
     </div>
+    <small class="coded">
+      <a href=" https://github.com/laura-dumitru/Weather-App" target="_blank">
+        Open source code
+      </a>
+      by Laura Dumitru
+    </small>
     <script src="script.js"></script>
   </body>
 </html>

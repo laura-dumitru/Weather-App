@@ -1,7 +1,7 @@
 let now = new Date();
 let date = now.getDate();
 let hours = now.getHours();
-let minutes = now.getMinutes();
+let minutes = `0${now.getMinutes()}`.slice(-2);
 let year = now.getFullYear();
 let days = [
   "Sunday",
@@ -29,14 +29,57 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let day = days[date.getDay()];
+
+  return formatHours(timestamp);
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 let li = document.querySelector(".date");
 li.innerHTML = `${day} ${date} ${month} ${year} ${hours}:${minutes}`;
 
 let city = "Barcelona";
 let apiKey = "e3dda97cfe9d9fc23a4b5fa7130913b1";
-let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
+let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiURL).then(showTemperature);
+apiURL = ` https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiURL).then(displayForecast);
 
-axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature);
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col-2">
+      <h3> ${formatDate(forecast.dt * 1000)}</h3>
+      <img
+        src="https://image.flaticon.com/icons/svg/169/169367.svg"
+        alt=""
+      />
+      <div class="weather-forecast-temperature">
+        <strong>${Math.round(forecast.main.temp_max)}˚</strong>|${Math.round(
+      forecast.main.temp_min
+    )}˚
+      </div>
+    </div>`;
+  }
+}
 
 function search(event) {
   event.preventDefault();
@@ -45,25 +88,34 @@ function search(event) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = inputCity.value;
 
-  apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&units=metric`;
-  axios.get(`${apiURL}&appid=${apiKey}`).then(showTemperature);
+  apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(showTemperature);
+  apiURL = ` https://api.openweathermap.org/data/2.5/forecast?q=${inputCity.value}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
 let link = document.querySelector(".temperature strong");
-link.innerHTML = 30;
+//link.innerHTML = 30;
 
 function linkCelcius(event) {
   event.preventDefault();
-  link.innerHTML = 30;
+  //link.innerHTML = 30;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
+let celciusTemperature = null;
+
 let celciusLink = document.querySelector("#celsius");
 celciusLink.addEventListener("click", linkCelcius);
 
 function linkFahrenheit(event) {
   event.preventDefault();
-  link.innerHTML = 86;
+
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", linkFahrenheit);
@@ -71,9 +123,16 @@ fahrenheitLink.addEventListener("click", linkFahrenheit);
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
-
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
+  let description = response.data.weather[0].description;
+  descriptionElement.innerHTML = description;
+  humidityElement.innerHTML = `${response.data.main.humidity}%`;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)} Km/h`;
+  celciusTemperature = response.data.main.temp;
 }
 
 function getCurrentPosition() {
