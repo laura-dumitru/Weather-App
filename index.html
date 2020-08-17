@@ -33,32 +33,25 @@
           </div>
           <input type="submit" value="Search" class="btn" />
 
-          <button type="button" class="btn col-2 location">Location</button>
+          <button type="button" class="btn location col-1">
+            <i class="fas fa-map-marker-alt"></i>
+
+          </button>
         </form>
-
-        <h1 id="city"></h1>
-
-        <ul>
-          <li class="date">
-            Monday 21 Jun 2020 13:00
-          </li>
-        </ul>
-
-        <br />
 
         <div class="row">
           <div class="col-6">
+            <h1 id="city"></h1>
+            <ul>
+              <li class="date"></li>
+            </ul>
             <ul>
               <li id="description">Sunny 😎</li>
               <li>Humidity: <span id="humidity"></span></li>
               <li>Wind: <span id="wind"></span></li>
             </ul>
-          </div>
-
-          <div class="col-6">
-            <i class="fas fa-sun float-left main-icon"></i>
-
-            <div class="temperature float-right">
+            <br />
+            <div class="temperature">
               <strong id="temperature"></strong>
               <small>
                 <a href="#" id="celsius">
@@ -70,6 +63,10 @@
                 </a>
               </small>
             </div>
+          </div>
+
+          <div class="col-6">
+            <img class="main-icon" />
           </div>
         </div>
       </div>
@@ -84,8 +81,9 @@
       <a href=" https://github.com/laura-dumitru/Weather-App" target="_blank">
         Open source code
       </a>
-      by Laura Dumitru
+      by Laura Dumitru <img id="rainbow" src="img/rainbow.svg"></img>
     </small>
+
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 696 640" xmlns="http://www.w3.org/2000/svg">
+	<style type="text/css">
+		.pupil       { fill:   #4D4D4D }
+		.eye         { fill:   white   }
+		.smile       { stroke: #FFC864 }
+    .moon        { fill:   #FFDC8C }
+		.eye-cloud   { stroke: #4D4D4D }
+		.smile-cloud { stroke: #CCC    }
+		.cloud       { fill:   #F2F2F2 }
+		.zzz         { stroke: #F2F2F2 }
+  </style>
+  <path class="moon" fill-rule="evenodd" clip-rule="evenodd" d="m96 128c0-53.7 33.1-99.7 80-118.7-14.8-6-31-9.3-48-9.3-70.7 0-128 57.3-128 128s57.3 128 128 128c17 0 33.2-3.3 48-9.3-46.9-19-80-65-80-118.7z"/>
+  <path class="detail smile" d="m80 148c0 8.8-7.2 16-16 16s-16-7.2-16-16" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/>
+  <g fill-rule="evenodd" clip-rule="evenodd">
+		<g class="detail eye">
+			<circle cx="48" cy="112" r="16"/>
+			<circle cx="80" cy="112" r="16"/>
+		</g>
+		<g class="detail pupil">
+			<circle cx="80" cy="112" r="8"/>
+			<circle cx="48" cy="112" r="8"/>
+		</g>
+		<g class="cloud">
+			<path d="m448 448h-256c-70.7 0-128-57.3-128-128 0-70.7 57.3-128 128-128h256c70.7 0 128 57.3 128 128 0 70.7-57.3 128-128 128z"/>
+			<circle cx="320" cy="192" r="128"/>
+		</g>
+		<g class="detail eye-cloud" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="12">
+			<path d="m288 224c0 17.7-14.3 32-32 32s-32-14.3-32-32"/>
+			<path d="m416 224c0 17.7-14.3 32-32 32s-32-14.3-32-32"/>
+		</g>
+		<path class="detail smile-cloud" d="m352 320c0 17.7-14.3 32-32 32s-32-14.3-32-32" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="12"/>
+  </g>
+	<g class="detail zzz" style="fill:none;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10">
+		<path d="m651.5 92.5h36l-36 36h36"/>
+		<path d="m578 94h48l-48 48h48"/>
+		<path d="m480 96h64l-64 64h64"/>
+	</g>
+</svg>

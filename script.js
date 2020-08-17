@@ -50,28 +50,108 @@ function formatHours(timestamp) {
 }
 
 let li = document.querySelector(".date");
-li.innerHTML = `${day} ${date} ${month} ${year} ${hours}:${minutes}`;
+li.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
 let city = "Barcelona";
 let apiKey = "e3dda97cfe9d9fc23a4b5fa7130913b1";
 let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiURL).then(showTemperature);
-apiURL = ` https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiURL).then(displayForecast);
+apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiURL).then(update);
 
-function displayForecast(response) {
+function update(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = null;
-  let forecast = null;
+  let iconElement = document.querySelector(".main-icon");
+  let gradientElement = document.querySelector(".container");
+  let weatherAppElement = document.querySelector(".weather-app");
+  let searchButtonElement = document.querySelector("input.btn");
+  let locationButtonElement = document.querySelector(".location.btn");
 
-  for (let index = 0; index < 6; index++) {
-    forecast = response.data.list[index];
+  let forecast = null;
+  forecastElement.innerHTML = null;
+
+  for (let i = 0; i < 6; i++) {
+    forecast = response.data.list[i];
+    let description = forecast.weather[0].description;
+    let icon = forecast.weather[0].icon;
+    // https://openweathermap.org/weather-conditions#How-to-get-icon-URL
+
+    if (icon === "01d") {
+      // sun
+      if (i === 0) {
+        gradientElement.id = "sunny";
+        searchButtonElement.id = "sun";
+        locationButtonElement.id = "sun";
+      }
+    } else if (icon === "01n") {
+      // moon
+    } else if (icon === "02d") {
+      // sun + cloud
+      if (i === 0) {
+        gradientElement.id = "sunny";
+        searchButtonElement.id = "sun";
+        locationButtonElement.id = "sun";
+      }
+    } else if (icon === "02n") {
+      // cloud + moon
+    } else if (/(0[34]|50)[dn]/.test(icon)) {
+      // cloud
+      if (i === 0) {
+        gradientElement.id = "cloudy";
+        searchButtonElement.id = "cloud";
+        locationButtonElement.id = "cloud";
+      }
+    } else if (icon === "10d") {
+      // rainbow
+      if (i === 0) {
+        gradientElement.id = "rainy";
+        searchButtonElement.id = "rain";
+        locationButtonElement.id = "rain";
+      }
+    } else if (/09[dn]|10n/.test(icon)) {
+      // rain
+      if (i === 0) {
+        gradientElement.id = "rainy";
+        searchButtonElement.id = "rain";
+        locationButtonElement.id = "rain";
+      }
+    } else if (icon.includes("11")) {
+      // lightning
+      if (i === 0) {
+        gradientElement.id = "stormy";
+        searchButtonElement.id = "storm";
+        locationButtonElement.id = "storm";
+      }
+    } else if (icon.includes("13")) {
+      // snow
+      if (i === 0) {
+        gradientElement.id = "snowy";
+        searchButtonElement.id = "snow";
+        locationButtonElement.id = "snow";
+      }
+    }
+
+    let src = `img/${icon}.svg`;
+    let black = "#3f3f44";
+
+    if (i === 0) {
+      iconElement.setAttribute("src", src);
+      iconElement.setAttribute("alt", description);
+
+      if (icon.endsWith("n")) {
+        gradientElement.id = "nighttime";
+        searchButtonElement.id = "night";
+        locationButtonElement.id = "night";
+        weatherAppElement.style.color = "white";
+      } else {
+        weatherAppElement.style.color = black;
+      }
+    }
+
+    forecastElement.style.color = black;
     forecastElement.innerHTML += `<div class="col-2">
-      <h3> ${formatDate(forecast.dt * 1000)}</h3>
-      <img
-        src="https://image.flaticon.com/icons/svg/169/169367.svg"
-        alt=""
-      />
+      <h3>${formatHours(forecast.dt * 1000)}</h3>
+      <img src="${src}" alt="${description}"/>
       <div class="weather-forecast-temperature">
         <strong>${Math.round(forecast.main.temp_max)}˚</strong>|${Math.round(
       forecast.main.temp_min
@@ -90,8 +170,8 @@ function search(event) {
 
   apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showTemperature);
-  apiURL = ` https://api.openweathermap.org/data/2.5/forecast?q=${inputCity.value}&appid=${apiKey}&units=metric`;
-  axios.get(apiURL).then(displayForecast);
+  apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity.value}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(update);
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);

@@ -1,18 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
 
 .weather-app {
-  max-width: 600px;
   margin: 0 auto;
   padding: 16px;
+  color: #3f3f44;
 }
 .container {
   font-family: "Alice", serif;
-  background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
-  padding: 20px;
+  padding: 16px;
   margin-top: 16px;
-  color: #3f3f44;
   max-width: 640px;
-  border-radius: 12px;
+  border-radius: 16px;
+}
+#sunny {
+  background-image: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
+}
+#cloudy {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-blend-mode: screen;
+}
+#rainy {
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+}
+#snowy {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+#stormy {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+#nighttime {
+  background-image: linear-gradient(
+    to top,
+    #505285 0%,
+    #585e92 12%,
+    #65689f 25%,
+    #7474b0 37%,
+    #7e7ebb 50%,
+    #8389c7 62%,
+    #9795d4 75%,
+    #a2a1dc 87%,
+    #b5aee4 100%
+  );
 }
 
 .form-control {
@@ -27,16 +55,14 @@
   border: none;
 }
 .card-body {
-  color: #3f3f44;
-  padding: 32px;
+  padding: 40px;
   font-size: 20px;
+  text-align: center;
 }
 .weather-forecast-temperature {
   font-size: 18px;
-  padding: 0;
-  padding-top: 10px;
-  margin: 0 auto;
   text-align: center;
+  padding-top: 8px;
 }
 
 h1 {
@@ -57,15 +83,10 @@ ul {
   padding: 0;
 }
 
-.temperature,
-.fas.main-icon {
+.temperature {
   position: relative;
   top: -26px;
   font-size: 60px;
-}
-.fas.main-icon {
-  font-size: 120px;
-  margin-right: 5px;
 }
 
 small {
@@ -73,38 +94,85 @@ small {
   vertical-align: super;
 }
 
-.fas {
-  color: #fee140;
+.fa-map-marker-alt {
+  font-size: 24px;
 }
 
 .btn {
-  background-color: #ff9a9e;
-  color: #3f3f44;
   cursor: pointer;
   height: calc(1.5em + 0.75rem + 2px);
   transition: all 200ms ease-in-out;
   border: none;
-  width: 140px;
+  width: 100px;
   margin: 0 8px;
 }
-.btn:hover {
-  background-color: #ffafbd;
-  color: #3f3f44;
+
+.btn#sun {
+  background-color: #b7b7e5;
+}
+.btn#sun:hover {
+  background-color: #a9c2eb;
+}
+
+.btn#cloud {
+  background-color: #c5d0e3;
+}
+.btn#cloud:hover {
+  background-color: #d9e2ed;
+}
+
+.btn#rain {
+  background-color: #97aad0;
+}
+.btn#rain:hover {
+  background-color: #b6c5da;
+}
+
+.btn#snow {
+  background-color: #eaedef;
+}
+.btn#snow:hover {
+  background-color: #dfebf0;
+}
+
+.btn#storm {
+  background-color: #d1e4fd;
+}
+.btn#storm:hover {
+  background-color: #ddeafb;
+}
+
+.btn#night {
+  background-color: #8082c0;
+}
+.btn#night:hover {
+  background-color: #b2ace2;
+}
+
+.main-icon {
+  margin: 32px 16px 0 0;
+}
+.card-body img {
+  height: 64px;
+  margin: 8px 0;
+  vertical-align: top;
 }
 
 a {
-  color: #3f3f44;
-  cursor: default;
+  cursor: pointer;
+  color: inherit;
 }
 a:hover {
-  color: #ec8c69;
-  text-decoration: none;
+  color: inherit;
 }
 
 .coded {
   display: block;
   text-align: center;
   font-size: 16px;
+}
+#rainbow {
+  width: 48px;
 }
 
 #humidity,
@@ -113,4 +181,42 @@ a:hover {
 }
 #description::first-letter {
   text-transform: capitalize;
+}
+
+@media (max-width: 480px) {
+  .container {
+    font-size: x-small;
+    padding: 0;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-radius: 0;
+  }
+
+  .card-body .col-2 {
+    padding: 0 8px;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .card-body h3 {
+    font-size: 12px;
+  }
+  .weather-forecast-temperature {
+    font-size: 12px;
+    padding-top: 0;
+  }
+
+  .card-body img {
+    width: 40px;
+    margin: 0;
+    vertical-align: top;
+  }
+  .btn {
+    max-width: 70px;
+  }
+  .card {
+    border-radius: 8px;
+  }
 }

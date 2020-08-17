@@ -1,0 +1,20 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+    .pupil { fill:   #4D4D4D }
+    .eye   { fill:   white   }
+    .smile { stroke: #FFC864 }
+    .moon  { fill:   #FFDC8C }
+  </style>
+  <g fill-rule="evenodd" clip-rule="evenodd">
+    <path class="moon" d="m96 128c0-53.7 33.1-99.7 80-118.7-14.8-6-31-9.3-48-9.3-70.7 0-128 57.3-128 128s57.3 128 128 128c17 0 33.2-3.3 48-9.3-46.9-19-80-65-80-118.7z"/>
+    <path class="detail smile" d="m80 148c0 8.8-7.2 16-16 16s-16-7.2-16-16" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/>
+    <g class="detail eye">
+      <circle cx="48" cy="112" r="16"/>
+      <circle cx="80" cy="112" r="16"/>
+    </g>
+    <g class="detail pupil">
+      <circle cx="80" cy="112" r="8"/>
+      <circle cx="48" cy="112" r="8"/>
+    </g>
+  </g>
+</svg>

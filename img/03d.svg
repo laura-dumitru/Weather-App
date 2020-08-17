@@ -1,0 +1,21 @@
+<svg viewBox="0 0 512 640" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+    .eye   { fill:   white   }
+    .pupil { fill:   #4D4D4D }
+    .mouth { stroke: #CCC    }
+    .cloud { fill:   #F2F2F2 }
+  </style>
+  <g class="cloud" clip-rule="evenodd" fill-rule="evenodd">
+    <path d="m384 384h-256c-70.69 0-128-57.31-128-128s57.31-128 128-128h256c70.69 0 128 57.31 128 128s-57.31 128-128 128z"/>
+    <circle cx="256" cy="128" r="128"/>
+  </g>
+  <path class="detail mouth" d="m288 256c0 17.67-14.33 32-32 32s-32-14.33-32-32" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="12"/>
+  <g class="detail eye">
+    <path d="m320 160c-17.67 0-32 14.33-32 32s14.33 32 32 32 32-14.33 32-32-14.33-32-32-32z"/>
+    <path d="m192 160c-17.67 0-32 14.33-32 32s14.33 32 32 32 32-14.33 32-32-14.33-32-32-32z"/>
+  </g>
+  <g class="detail pupil" clip-rule="evenodd" fill-rule="evenodd">
+    <circle cx="320" cy="192" r="16"/>
+    <circle cx="192" cy="192" r="16"/>
+  </g>
+</svg>
