@@ -3,6 +3,7 @@
 .weather-app {
   margin: 0 auto;
   padding: 16px;
+  max-height: 350px;
   color: #3f3f44;
 }
 .container {
@@ -161,6 +162,7 @@ small {
 a {
   cursor: pointer;
   color: inherit;
+  text-decoration: underline;
 }
 a:hover {
   color: inherit;
@@ -187,9 +189,14 @@ a:hover {
   .container {
     font-size: x-small;
     padding: 0;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
     margin-bottom: 16px;
+    margin-top: 0;
+
     border-radius: 0;
+  }
+  .weather-app {
+    max-height: 260px;
   }
 
   .card-body .col-2 {
