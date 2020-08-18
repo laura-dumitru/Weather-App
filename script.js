@@ -52,7 +52,7 @@ function formatHours(timestamp) {
 let li = document.querySelector(".date");
 li.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
-let city = "Barcelona";
+let city = "Rio";
 let apiKey = "e3dda97cfe9d9fc23a4b5fa7130913b1";
 let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiURL).then(showTemperature);
@@ -213,6 +213,9 @@ function showTemperature(response) {
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = `${Math.round(response.data.wind.speed)} Km/h`;
   celciusTemperature = response.data.main.temp;
+
+  apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${response.data.name}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(update);
 }
 
 function getCurrentPosition() {
@@ -223,7 +226,10 @@ function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric`;
+  //axios.get(`${apiUrl}&appid=${apiKey}`).then(log);
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  //apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity.value}&appid=${apiKey}&units=metric`;
+  //axios.get(apiURL).then(update);
 }
 
 let locationButton = document.querySelector(".location");
