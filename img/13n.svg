@@ -1,1 +1,61 @@
-./13d.svg
+<svg viewBox="0 0 512 640" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+    .hat-detail  { stroke: #FFA0B4 }
+    .hat         { fill:   #FFBEC8 }
+    .cloud       { fill:   #D2E6F0 }
+    .snow        { fill:   #F2F2F2 }
+    .teeth       { stroke: #F2F2F2 }
+    .pupil       { fill:   #4D4D4D }
+    .mouth, .eye { fill:   white   }
+  </style>
+  <g clip-rule="evenodd" fill-rule="evenodd">
+    <g class="cloud">
+      <path d="m384 416h-256c-70.7 0-128-57.3-128-128 0-70.7 57.3-128 128-128h256c70.7 0 128 57.3 128 128 0 70.7-57.3 128-128 128z"/>
+      <circle cx="256" cy="160" r="128"/>
+    </g>
+    <g class="snow">
+      <circle cx="96" cy="480" r="32"/>
+      <circle cx="192" cy="480" r="32"/>
+      <circle cx="288" cy="480" r="32"/>
+      <circle cx="384" cy="480" r="32"/>
+      <circle cx="160" cy="576" r="32"/>
+      <circle cx="256" cy="576" r="32"/>
+      <circle cx="352" cy="576" r="32"/>
+    </g>
+    <path class="detail mouth" d="m320 352h-128c-17.7 0-32-14.3-32-32s14.3-32 32-32h128c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/>
+  </g>
+  <g class="detail teeth" fill="none" stroke-miterlimit="10" stroke-width="4">
+    <path d="m160 320h192"/>
+    <path d="m320 288v64"/>
+    <path d="m288 288v64"/>
+    <path d="m256 288v64"/>
+    <path d="m224 288v64"/>
+    <path d="m192 288v64"/>
+  </g>
+  <g clip-rule="evenodd" fill-rule="evenodd">
+    <g class="detail eye">
+      <circle cy="224" r="32" cx="192"/>
+      <circle cy="224" r="32" cx="320"/>
+    </g>
+    <g class="detail pupil">
+      <circle cx="192" cy="224" r="16"/>
+      <circle cx="320" cy="224" r="16"/>
+    </g>
+  </g>
+  <g class="detail hat" fill-rule="evenodd" clip-rule="evenodd">
+    <circle cx="256" cy="32" r="29"/>
+    <path d="m256 160h-128c0-70.2 57.8-128 128-128s128 57.8 128 128z"/>
+    <path d="m376 160h-240c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h240c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z"/>
+  </g>
+  <g class="detail hat-detail" fill="none" stroke="#" stroke-miterlimit="10" stroke-width="6">
+    <path d="m376 160h-16c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z" />
+    <path d="m344 160h-16c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z"/>
+    <path d="m312 160h-16c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z"/>
+    <path d="m280 160h-16c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z"/>
+    <path d="m248 160h-16c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z"/>
+    <path d="m216 160h-16c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z"/>
+    <path d="m184 160h-16c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z"/>
+    <path d="m152 160h-16c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h16c4.4 0 8 3.6 8 8v48c0 4.4-3.6 8-8 8z"/>
+    <circle cx="256" cy="32" r="29"/>
+  </g>
+</svg>

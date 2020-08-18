@@ -1,1 +1,36 @@
-./11d.svg
+<svg viewBox="0 0 512 640" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+    .hand      { fill:   #E6E6E6 }
+    .lightning { fill:   #FFC864 }
+    .eye       { stroke: #4D4D4D }
+    .mouth     { fill:   white   }
+    .teeth     { stroke: #F2F2F2 }
+    .cloud     { fill:   #F2F2F2 }
+  </style>
+  <g class="cloud" clip-rule="evenodd" fill-rule="evenodd">
+    <path d="m384 384h-256c-70.69 0-128-57.31-128-128s57.31-128 128-128h256c70.69 0 128 57.31 128 128s-57.31 128-128 128z"/>
+    <circle cx="256" cy="128" r="128"/>
+  </g>
+  <path class="detail mouth" clip-rule="evenodd" fill-rule="evenodd" d="m320 320h-128c-17.67 0-32-14.33-32-32s14.33-32 32-32h128c17.67 0 32 14.33 32 32s-14.33 32-32 32z"/>
+  <g class="teeth" fill="none" stroke-miterlimit="10" stroke-width="4">
+    <path d="m160 288h192"/>
+    <path d="m320 256v64"/>
+    <path d="m288 256v64"/>
+    <path d="m256 256v64"/>
+    <path d="m224 256v64"/>
+    <path d="m192 256v64"/>
+    <g class="detail eye" stroke-linecap="round" stroke-linejoin="round" stroke-width="12">
+      <path d="m352 192-64 32h64"/>
+      <path d="m160 192 64 32h-64"/>
+    </g>
+  </g>
+  <g class="lightning" clip-rule="evenodd" fill-rule="evenodd">
+    <g class="detail">
+      <path d="m448 384h-128l128-128z"/>
+      <path d="m384 512v-128h128c-49.99 49.99-78.01 78.01-128 128z"/>
+    </g>
+    <path d="m256 512h-128l128-128z"/>
+    <path d="m192 640v-128h128c-49.99 49.99-78.01 78.01-128 128z"/>
+  </g>
+  <circle class="detail hand" clip-rule="evenodd" cx="448" cy="352" fill-rule="evenodd" r="32"/>
+</svg>
