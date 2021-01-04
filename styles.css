@@ -189,6 +189,11 @@ a:hover {
 }
 
 @media (max-width: 480px) {
+  html,
+  body {
+    height: 100%;
+  }
+
   .container {
     font-size: x-small;
     padding: 0;
@@ -196,13 +201,18 @@ a:hover {
     margin-bottom: 16px;
     margin-top: 0;
     border-radius: 0;
+    height: 92%;
   }
-  .weather-app {
-    max-height: 260px;
+
+  #search-form {
+    margin-bottom: 16px;
   }
 
   .main-icon {
     margin-top: 48px;
+  }
+  .temperature {
+    margin-top: 16px;
   }
 
   .card-body .col-2 {
@@ -210,7 +220,8 @@ a:hover {
   }
 
   .card-body {
-    padding: 16px;
+    flex: 1 1 auto;
+    padding: 30px;
   }
 
   .card-body h3 {
@@ -223,6 +234,7 @@ a:hover {
 
   .card-body img {
     width: 40px;
+    height: 96px;
     margin: 0;
     vertical-align: top;
   }
@@ -230,6 +242,7 @@ a:hover {
     max-width: 70px;
   }
   .card {
+    margin-top: 32px;
     border-radius: 8px;
   }
 }
