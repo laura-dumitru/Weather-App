@@ -52,7 +52,7 @@ function formatHours(timestamp) {
 let li = document.querySelector(".date");
 li.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
-let city = "Rio";
+let city = "Stockholm";
 let apiKey = "e3dda97cfe9d9fc23a4b5fa7130913b1";
 let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiURL).then(showTemperature);
