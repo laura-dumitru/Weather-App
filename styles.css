@@ -175,6 +175,7 @@ a:hover {
   display: block;
   text-align: center;
   font-size: 16px;
+  margin: 20px;
 }
 #rainbow {
   width: 48px;
