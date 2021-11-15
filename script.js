@@ -52,7 +52,7 @@ function formatHours(timestamp) {
 let li = document.querySelector(".date");
 li.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
-let city = "Stockholm";
+let city = "Valencia";
 let apiKey = "e3dda97cfe9d9fc23a4b5fa7130913b1";
 let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiURL).then(showTemperature);
@@ -172,6 +172,7 @@ function search(event) {
   axios.get(apiURL).then(showTemperature);
   apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${inputCity.value}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(update);
+  inputCity.value = "";
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
