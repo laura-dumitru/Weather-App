@@ -5,5 +5,5 @@ The app background colour and icon change according to the forecast and time of 
 Technologies learned: **HTML, CSS, JavaScript, API, Geolocation API and Bootstrap**.  
 
 How to use:
-* Input city in the search bar and press SEARCH.
-* Press location button to get the weather in your current location.
+* Input city in the search bar and press **SEARCH**.
+* Press _location_ button to get the weather in your current location.
